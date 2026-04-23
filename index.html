@@ -19,9 +19,9 @@
         }
 
         body {
-            /* Background အလင်းတင်ထားသောအပိုင်း (rgba 0.4) */
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                        url('https://github.com/Minghkldy/contact/blob/main/12a347e1265d4747d0c574fb3bddacbb.jpg'); 
+            /* Background ကို အကြည်ရောင် ပိုဆန်စေရန် rgba တန်ဖိုးကို ညှိထားပါသည် */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://raw.githubusercontent.com/Minghkldy/contact/main/12a347e1265d4747d0c574fb3bddacbb.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -31,29 +31,25 @@
             min-height: 100vh;
             color: white;
             overflow-x: hidden;
-            /* Browser အရှည်လိုက်အကွက်အတွက် min-height: 100vh ကြောင့် အလယ်ရောက်ရန် */
             padding: 20px 0; 
         }
 
         .container {
             width: 95%;
-            max-width: 480px; /* Panel အကွက်အကျယ်ကို နည်းနည်း ထပ်ချဲ့သည် */
-            /* ၁။ အရှည်ကို Browser screen အပြည့်နီးပါးဖြစ်အောင် vh unit သုံးထားပါသည် */
+            max-width: 480px; 
             min-height: 90vh; 
-            padding: 40px 20px; /* ထိပ်နှင့်အောက်တွင် padding ပိုထည့်သည် */
+            padding: 40px 20px;
             text-align: center;
             position: relative;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px; /* ဘောင်အဝိုင်းကို ပိုဝိုင်းစေသည် */
-            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5); /* Shadow ကို ပိုအားကောင်းစေသည် */
-            
-            /* ၂။ Content များ Browser screen အပြည့်ဖြစ်အောင် Flex Column သုံးသည် */
+            border-radius: 25px;
+            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5); 
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Content များကို အလယ်တွင် ထားသည် */
+            justify-content: center;
         }
 
         .watermark {
@@ -68,11 +64,11 @@
         }
 
         .logo-section {
-            margin-bottom: 25px; /* Logo အောက်တွင် margin ပိုထည့်သည် */
+            margin-bottom: 25px;
         }
 
         .logo-section img {
-            width: 120px; /* Logo အရွယ်အစားကို နည်းနည်း ထပ်ချဲ့သည် */
+            width: 120px;
             height: 120px;
             border-radius: 50%;
             border: 4px solid #ffd700;
@@ -90,18 +86,19 @@
         }
 
         .welcome-text {
-    color: #ffd700;
-    font-size: 18px; /* ၁၄ မှ ၁၈ သို့ တိုးထားသည် */
-    font-weight: bold; /* စာလုံးအထူ ဖြစ်အောင် ထည့်ထားသည် */
-    margin-bottom: 30px;
-    padding: 0 10px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-    line-height: 1.5; /* စာကြောင်းအကွာအဝေး ပိုကြည်လင်စေရန် */
+            color: #ffd700;
+            font-size: 18px; 
+            font-weight: bold; 
+            margin-bottom: 30px;
+            padding: 0 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            line-height: 1.5;
         }
+
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 15px; /* ခလုတ်များကြား အကွာအဝေးကို နည်းနည်း ထပ်တိုးသည် */
+            gap: 15px;
             width: 100%;
         }
 
@@ -113,8 +110,8 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50px;
-            padding: 0 25px; /* ဘေး padding ကို နည်းနည်း ထပ်တိုးသည် */
-            min-height: 60px; /* ခလုတ်အမြင့်ကို နည်းနည်း ထပ်တိုးသည် */
+            padding: 0 25px;
+            min-height: 60px;
             text-decoration: none;
             color: white;
             transition: all 0.3s ease;
@@ -131,7 +128,7 @@
         }
 
         .link-card i, .link-card span:first-child {
-            width: 40px; /* icon area size ကို နည်းနည်း ထပ်ချဲ့သည် */
+            width: 40px;
             font-size: 24px;
             display: flex;
             justify-content: center;
@@ -140,24 +137,22 @@
         }
 
         .link-text {
-    flex-grow: 1;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold; /* ဤစာကြောင်းကို ထည့်ပေးပါ (စာလုံးအထူဖြစ်စေရန်) */
-    margin-right: 40px; 
-}
+            flex-grow: 1;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold; 
+            margin-right: 40px; 
+        }
 
-        /* Brand Colors for Icons */
         .fa-facebook-messenger { color: #0084ff; }
         .fa-viber { color: #7360f2; }
         .fa-telegram { color: #0088cc; }
         .fa-line { color: #00c300; }
         .fa-bullhorn { color: #ffcc00; }
 
-        /* Tablet နှင့် Desktop အတွက် အချိုးအစားကျအောင် ပြင်ဆင်ခြင်း */
         @media (min-width: 768px) {
             .container {
-                padding: 60px 40px; /* Tablet ပေါ်တွင် padding ပိုထည့်သည် */
+                padding: 60px 40px;
             }
             .logo-section img {
                 width: 140px;
@@ -170,7 +165,6 @@
                 padding: 0 35px;
             }
         }
-
     </style>
 </head>
 <body>
