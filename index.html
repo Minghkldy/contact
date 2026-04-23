@@ -14,7 +14,7 @@
         }
 
         body {
-            /* ၁။ Background ပုံအတွက် ပြင်ထားသောအပိုင်း */
+            /* ၁။ Background ပုံအတွက် ပြင်ထားသောအပိုင်း - Blur ထည့်ထားသည် */
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                         url('https://raw.githubusercontent.com/Minghkldy/contact/main/image.png'); 
             background-size: cover;
@@ -25,14 +25,23 @@
             align-items: center;
             min-height: 100vh;
             color: white;
+            backdrop-filter: blur(10px); /* Background ကို ဝါးစေရန် */
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .container {
-            width: 100%;
+            width: 90%;
             max-width: 450px;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
-            position: relative; /* Watermark အတွက် position သတ်မှတ်ချက် */
+            position: relative;
+            /* အလယ်က အကြည်ရောင် Panel အကျိုးသက်ရောက်မှု */
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
         /* ၂။ အလယ်က Logo ရေစာ (Watermark) အတွက် ကုဒ်အသစ် */
