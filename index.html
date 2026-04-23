@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Contact Links</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -11,11 +11,14 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Pyidaungsu', sans-serif;
+            /* ဖုန်းမှာ ဖိထားရင် စာသား select ဖြစ်တာကို ပိတ်ရန် */
+            -webkit-user-select: none;
+            user-select: none;
         }
 
         body {
-            /* ၁။ Background ပုံအတွက် ပြင်ထားသောအပိုင်း - Blur ကို ဖယ်ရှားလိုက်ပါသည် */
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+            /* ၂။ Background အလင်းတင်ရန် rgba ထဲမှ 0.7 ကို 0.4 သို့ လျှော့ချထားပါသည် */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
                         url('https://raw.githubusercontent.com/Minghkldy/contact/main/image.png'); 
             background-size: cover;
             background-position: center;
@@ -25,16 +28,16 @@
             align-items: center;
             min-height: 100vh;
             color: white;
-            /* backdrop-filter: blur(10px); <- ဤအပိုင်းကို ဖြုတ်လိုက်ပါသည် */
+            /* စခရင် အသေဖြစ်စေရန် overflow ပိတ်ခြင်း */
+            overflow-x: hidden;
         }
 
         .container {
-            width: 95%; /* ဖုန်းအတွက် ပိုကျယ်အောင် 90% မှ 95% သို့ ပြင်သည် */
+            width: 95%;
             max-width: 450px;
             padding: 30px 15px;
             text-align: center;
             position: relative;
-            /* အလယ်က အကြည်ရောင် Panel အကျိုးသက်ရောက်မှု */
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
@@ -43,7 +46,6 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
-        /* ၂။ အလယ်က Logo ရေစာ (Watermark) အတွက် ကုဒ်အသစ် */
         .watermark {
             position: absolute;
             top: 50%;
@@ -82,7 +84,7 @@
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 12px; /* ခလုတ်အကွာအဝေး */
+            gap: 12px;
         }
 
         .link-card {
@@ -99,6 +101,7 @@
             transition: all 0.3s ease;
             position: relative;
             width: 100%;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .link-card:hover {
@@ -108,7 +111,7 @@
         }
 
         .link-card i, .link-card span:first-child {
-            width: 35px; /* icon area size */
+            width: 35px;
             font-size: 22px;
             display: flex;
             justify-content: center;
@@ -121,10 +124,9 @@
             text-align: center;
             font-size: 15px;
             font-weight: 500;
-            margin-right: 35px; /* Icon width နဲ့ညီအောင် ညာဘက်ကနေ ပြန်တွန်းပြီး စာသားကို အလယ်ပို့သည် */
+            margin-right: 35px; /* Icon width နဲ့ညီအောင် စာသားကို အလယ်ပို့ရန် */
         }
 
-        /* Brand Colors for Icons */
         .fa-facebook-messenger { color: #0084ff; }
         .fa-viber { color: #7360f2; }
         .fa-telegram { color: #0088cc; }
