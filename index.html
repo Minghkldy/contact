@@ -6,18 +6,20 @@
     <title>Contact Links</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* ဗမာစာလုံး Font ထည့်သွင်းခြင်း */
+        @import url('https://fonts.googleapis.com/css2?family=Pyidaungsu&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Pyidaungsu', sans-serif;
-            /* ဖုန်းမှာ ဖိထားရင် စာသား select ဖြစ်တာကို ပိတ်ရန် */
             -webkit-user-select: none;
             user-select: none;
         }
 
         body {
-            /* ၂။ Background အလင်းတင်ရန် rgba ထဲမှ 0.7 ကို 0.4 သို့ လျှော့ချထားပါသည် */
+            /* Background အလင်းတင်ထားသောအပိုင်း (rgba 0.4) */
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
                         url('https://raw.githubusercontent.com/Minghkldy/contact/main/image.png'); 
             background-size: cover;
@@ -28,22 +30,30 @@
             align-items: center;
             min-height: 100vh;
             color: white;
-            /* စခရင် အသေဖြစ်စေရန် overflow ပိတ်ခြင်း */
             overflow-x: hidden;
+            /* Browser အရှည်လိုက်အကွက်အတွက် min-height: 100vh ကြောင့် အလယ်ရောက်ရန် */
+            padding: 20px 0; 
         }
 
         .container {
             width: 95%;
-            max-width: 450px;
-            padding: 30px 15px;
+            max-width: 480px; /* Panel အကွက်အကျယ်ကို နည်းနည်း ထပ်ချဲ့သည် */
+            /* ၁။ အရှည်ကို Browser screen အပြည့်နီးပါးဖြစ်အောင် vh unit သုံးထားပါသည် */
+            min-height: 90vh; 
+            padding: 40px 20px; /* ထိပ်နှင့်အောက်တွင် padding ပိုထည့်သည် */
             text-align: center;
             position: relative;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border-radius: 25px; /* ဘောင်အဝိုင်းကို ပိုဝိုင်းစေသည် */
+            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5); /* Shadow ကို ပိုအားကောင်းစေသည် */
+            
+            /* ၂။ Content များ Browser screen အပြည့်ဖြစ်အောင် Flex Column သုံးသည် */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Content များကို အလယ်တွင် ထားသည် */
         }
 
         .watermark {
@@ -51,51 +61,59 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80%;
-            opacity: 0.1;
+            width: 85%;
+            opacity: 0.12;
             z-index: -1;
             pointer-events: none;
         }
 
+        .logo-section {
+            margin-bottom: 25px; /* Logo အောက်တွင် margin ပိုထည့်သည် */
+        }
+
         .logo-section img {
-            width: 110px;
-            height: 110px;
+            width: 120px; /* Logo အရွယ်အစားကို နည်းနည်း ထပ်ချဲ့သည် */
+            height: 120px;
             border-radius: 50%;
-            border: 3px solid #ffd700;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-            margin-bottom: 15px;
+            border: 4px solid #ffd700;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+            margin-bottom: 18px;
         }
 
         h1 {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: bold;
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: #f1f1f1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .welcome-text {
             color: #ffd700;
-            font-size: 13px;
-            margin-bottom: 25px;
+            font-size: 14px;
+            margin-bottom: 30px;
             padding: 0 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
         }
 
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px; /* ခလုတ်များကြား အကွာအဝေးကို နည်းနည်း ထပ်တိုးသည် */
+            width: 100%;
         }
 
         .link-card {
             display: flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50px;
-            padding: 0 20px;
-            min-height: 55px; /* ခလုတ်အားလုံး အမြင့်ညီရန် */
+            padding: 0 25px; /* ဘေး padding ကို နည်းနည်း ထပ်တိုးသည် */
+            min-height: 60px; /* ခလုတ်အမြင့်ကို နည်းနည်း ထပ်တိုးသည် */
             text-decoration: none;
             color: white;
             transition: all 0.3s ease;
@@ -105,33 +123,52 @@
         }
 
         .link-card:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
             border-color: #ffd700;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
         }
 
         .link-card i, .link-card span:first-child {
-            width: 35px;
-            font-size: 22px;
+            width: 40px; /* icon area size ကို နည်းနည်း ထပ်ချဲ့သည် */
+            font-size: 24px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 10px;
+            margin-right: 12px;
         }
 
         .link-text {
             flex-grow: 1;
             text-align: center;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 500;
-            margin-right: 35px; /* Icon width နဲ့ညီအောင် စာသားကို အလယ်ပို့ရန် */
+            margin-right: 40px; /* Icon width နဲ့ညီအောင် စာသားကို အလယ်ပို့ရန် */
         }
 
+        /* Brand Colors for Icons */
         .fa-facebook-messenger { color: #0084ff; }
         .fa-viber { color: #7360f2; }
         .fa-telegram { color: #0088cc; }
         .fa-line { color: #00c300; }
         .fa-bullhorn { color: #ffcc00; }
+
+        /* Tablet နှင့် Desktop အတွက် အချိုးအစားကျအောင် ပြင်ဆင်ခြင်း */
+        @media (min-width: 768px) {
+            .container {
+                padding: 60px 40px; /* Tablet ပေါ်တွင် padding ပိုထည့်သည် */
+            }
+            .logo-section img {
+                width: 140px;
+                height: 140px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            .link-card {
+                padding: 0 35px;
+            }
+        }
 
     </style>
 </head>
@@ -141,7 +178,7 @@
     <img src="https://your-watermark-logo.png" class="watermark" alt="">
 
     <div class="logo-section">
-        <img src="https://via.placeholder.com/150" alt="Logo">
+        <img src="https://via.placeholder.com/150/ffd700/000000?text=LOGO" alt="Logo">
         <h1>MM</h1>
         <p class="welcome-text">🥰 ပျော်ရွှင်မှုတွေနေ့တိုင်းရှာ အနိုင်ရဖို့ မှာ ကံထူးပါ 🥰</p>
     </div>
