@@ -29,9 +29,9 @@
         }
 
         .container {
-            width: 90%;
+            width: 95%; /* ဖုန်းအတွက် ပိုကျယ်အောင် 90% မှ 95% သို့ ပြင်သည် */
             max-width: 450px;
-            padding: 30px 20px;
+            padding: 30px 15px;
             text-align: center;
             position: relative;
             /* အလယ်က အကြည်ရောင် Panel အကျိုးသက်ရောက်မှု */
@@ -56,8 +56,8 @@
         }
 
         .logo-section img {
-            width: 120px;
-            height: 120px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             border: 3px solid #ffd700;
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
@@ -65,7 +65,7 @@
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: bold;
             letter-spacing: 2px;
             margin-bottom: 10px;
@@ -74,14 +74,15 @@
 
         .welcome-text {
             color: #ffd700;
-            font-size: 14px;
-            margin-bottom: 30px;
+            font-size: 13px;
+            margin-bottom: 25px;
+            padding: 0 10px;
         }
 
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px; /* ခလုတ်အကွာအဝေး */
         }
 
         .link-card {
@@ -91,43 +92,36 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 50px;
-            padding: 12px 25px;
+            padding: 0 20px;
+            min-height: 55px; /* ခလုတ်အားလုံး အမြင့်ညီရန် */
             text-decoration: none;
             color: white;
             transition: all 0.3s ease;
             position: relative;
+            width: 100%;
         }
 
         .link-card:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.03);
+            transform: translateY(-2px);
             border-color: #ffd700;
         }
 
-        .link-card i, .link-card img {
-            width: 30px;
-            font-size: 24px;
-            margin-right: 15px;
+        .link-card i, .link-card span:first-child {
+            width: 35px; /* icon area size */
+            font-size: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
         }
 
         .link-text {
             flex-grow: 1;
             text-align: center;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 500;
-        }
-
-        /* ၃။ အောက်ခြေ Banner ပုံအတွက် ကုဒ်အသစ် */
-        .bottom-banner {
-            margin-top: 30px;
-            width: 100%;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        .bottom-banner img {
-            width: 100%;
-            display: block;
+            margin-right: 35px; /* Icon width နဲ့ညီအောင် ညာဘက်ကနေ ပြန်တွန်းပြီး စာသားကို အလယ်ပို့သည် */
         }
 
         /* Brand Colors for Icons */
@@ -135,7 +129,7 @@
         .fa-viber { color: #7360f2; }
         .fa-telegram { color: #0088cc; }
         .fa-line { color: #00c300; }
-        .fa-slot { color: #ffcc00; }
+        .fa-bullhorn { color: #ffcc00; }
 
     </style>
 </head>
@@ -152,7 +146,7 @@
 
     <div class="links-container">
         <a href="YOUR_GAME_LINK" class="link-card">
-            <span style="font-size: 24px;">🎰</span>
+            <span>🎰</span>
             <span class="link-text">ဂိမ်းကစားရန်</span>
         </a>
 
