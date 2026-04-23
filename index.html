@@ -19,8 +19,8 @@
         }
 
         body {
-            /* Background အကြည်ရောင်ဖြစ်ရန် rgba တန်ဖိုးကို 0.8 အထိ မြှင့်ထားပါသည် */
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+            /* Background ပုံနှင့် အလင်းအမှောင် ညှိထားပါသည် */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                         url('https://raw.githubusercontent.com/Minghkldy/contact/main/12a347e1265d4747d0c574fb3bddacbb.jpg'); 
             background-size: cover;
             background-position: center;
@@ -33,76 +33,68 @@
             color: white;
             overflow-x: hidden;
             padding: 15px; 
+            /* 3D Effect အတွက် perspective ထည့်သွင်းရပါမည် */
+            perspective: 1000px;
         }
 
         .container {
             width: 100%;
-            max-width: 400px; /* ဖုန်းအတွက် အကျယ်ကို ညှိထားပါသည် */
+            max-width: 420px; /* Panel အကွက်အကျယ်ကို ဖုန်းအတွက် ချိန်ညှိသည် */
             min-height: auto; 
-            padding: 30px 15px;
+            padding: 30px 20px;
             text-align: center;
             position: relative;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+            border-radius: 25px;
             box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5); 
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .watermark {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 85%;
-            opacity: 0.12;
-            z-index: -1;
-            pointer-events: none;
-        }
-
         .logo-section {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .logo-section img {
-            width: 90px; /* ဖုန်းဆိုဒ်အတွက် Logo ကို လျှော့ထားပါသည် */
-            height: 90px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            border: 3px solid #ffd700;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-            margin-bottom: 15px;
+            border: 4px solid #ffd700;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+            margin-bottom: 18px;
         }
 
         h1 {
-            font-size: 22px; /* ဖုန်းအတွက် စာလုံးဆိုဒ် ညှိထားပါသည် */
+            font-size: 24px;
             font-weight: bold;
             letter-spacing: 1px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: #f1f1f1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .welcome-text {
             color: #ffd700;
-            font-size: 15px; 
+            font-size: 16px; 
             font-weight: bold; 
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             padding: 0 10px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
             width: 100%;
         }
 
+        /* ၁။ ခလုတ်များ၏ မူလအနေအထား - 3D Effect အတွက် ပြင်ဆင်ခြင်း */
         .link-card {
             display: flex;
             align-items: center;
@@ -111,36 +103,58 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50px;
-            padding: 0 15px;
-            min-height: 55px; /* ခလုတ်အမြင့်ကို ဖုန်းအတွက် ညှိထားပါသည် */
+            padding: 0 25px;
+            min-height: 55px; /* ခလုတ်အမြင့် */
             text-decoration: none;
             color: white;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* ပိုမိုညက်ညောသော transition */
             position: relative;
             width: 100%;
             -webkit-tap-highlight-color: transparent;
+            /* 3D အကျိုးသက်ရောက်မှုအတွက် element များကို 3D space တွင် ထားရှိရန် */
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
-        .link-card:active { /* ဖုန်းမှာ နှိပ်လိုက်ရင် တုန်ခါမှုပြရန် */
-            transform: scale(0.98);
+        /* ၂။ Mouse ထောက်လိုက်လျှင် (Hover) ဖောင်းကြွလာသော ဒီဇိုင်း */
+        .link-card:hover {
             background: rgba(255, 255, 255, 0.15);
+            border-color: #ffd700;
+            /* အပေါ်သို့ ကြွလာပြီး နည်းနည်းစောင်းသွားစေရန် - 3D ဖောင်းကြွ effect */
+            transform: translateZ(50px) translateY(-5px) rotateX(2deg);
+            /* အရိပ်ကို ပိုအားကောင်းစေပြီး ဖောင်းကြွမှုကို ပိုသိသာစေရန် */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 10px rgba(255, 215, 0, 0.2);
         }
 
+        /* နှိပ်လိုက်သည့်အချိန်တွင် နည်းနည်းပြန်ကျသွားစေရန် */
+        .link-card:active {
+            transform: translateZ(10px) translateY(1px) rotateX(1deg);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+            transition: all 0.1s ease;
+        }
+
+        /* ၃။ Hover လုပ်ချိန်တွင် အိုင်ကွန်နှင့် စာသားများပါ 3D နေရာရွေ့သွားစေရန် */
         .link-card i, .link-card span:first-child {
-            width: 30px;
-            font-size: 20px;
+            width: 35px;
+            font-size: 22px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 10px;
+            margin-right: 12px;
+            /* 3D space တွင် ပိုရှေ့ရောက်အောင် ထားသည် */
+            transform: translateZ(30px);
+            transition: transform 0.3s ease;
         }
 
         .link-text {
             flex-grow: 1;
             text-align: center;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: bold; 
-            margin-right: 30px; 
+            margin-right: 35px; 
+            /* 3D space တွင် icon ထက် နည်းနည်းနောက်ကျအောင် ထားသည် */
+            transform: translateZ(20px);
+            transition: transform 0.3s ease;
         }
 
         /* Brand Colors */
@@ -150,7 +164,7 @@
         .fa-line { color: #00c300; }
         .fa-bullhorn { color: #ffcc00; }
 
-        /* Tablet/Desktop အတွက် ကုဒ်များကို မပြင်ဘဲ ထားပါသည် */
+        /* Tablet နှင့် Desktop အတွက် ကုဒ်များကို မပြင်ဘဲ ထားပါသည် */
         @media (min-width: 768px) {
             .container {
                 max-width: 480px;
@@ -170,12 +184,10 @@
 <body>
 
 <div class="container">
-    <img src="https://your-watermark-logo.png" class="watermark" alt="">
-
     <div class="logo-section">
         <img src="https://via.placeholder.com/150/ffd700/000000?text=LOGO" alt="Logo">
-        <h1>MM</h1>
-        <p class="welcome-text">ပျော်ရွှင်မှုတွေနေ့တိုင်းရှာ အနိုင်ရဖို့ မှာ ကံထူးပါ</p>
+        <h1>KING9 MM</h1>
+        <p class="welcome-text">🥰 ပျော်ရွှင်မှုတွေနေ့တိုင်းရှာ အနိုင်ရဖို့ မှာ ကံထူးပါ 🥰</p>
     </div>
 
     <div class="links-container">
