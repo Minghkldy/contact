@@ -76,15 +76,30 @@
             animation: float 3s ease-in-out infinite;
         }
 
-        h1 {
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            /* စာသားကို Silver White ရောင်ပြေးပြောင်းခြင်း */
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5), 2px 2px 4px rgba(0,0,0,0.5);
-        }
+       h1 {
+    font-size: 30px; /* ဖတ်ရလွယ်အောင် ဆိုဒ်နည်းနည်း ထပ်တိုးသည် */
+    font-weight: 900; /* အထူဆုံး စာလုံးအမျိုးအစားကို သုံးသည် */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff; /* မူလစာသားအရောင် (အဖြူ) */
+    
+    /* ဒီအပိုင်းက 3D Bevel Effect အထူကို ဖန်တီးပေးတာပါ */
+    text-shadow: 
+        /* ညာဘက်အောက် Bevel - စာသားထူသွားစေရန် အဖြူရောင်အရိပ်ထပ်ခြင်း */
+        1px 1px 0px #ffffff,
+        2px 2px 0px #ffffff,
+        3px 3px 0px #ffffff,
+        4px 4px 0px #ffffff,
+        5px 5px 0px #ffffff,
+        
+        /* 3D Depth အရိပ် - နည်းနည်းမှောင်တဲ့အရောင်ဖြင့် Depth ပေးခြင်း */
+        6px 6px 1px rgba(0,0,0,0.4),
+        
+        /* ပုံထဲကအတိုင်း အပြာရောင် Glow Effect - အဝေးကြီးအထိ ပျံ့သွားစေရန် */
+        0px 0px 10px rgba(0, 242, 255, 0.7),
+        0px 0px 20px rgba(0, 242, 255, 0.5),
+        0px 0px 30px rgba(0, 242, 255, 0.3);
+}
 
         .welcome-text {
             /* Welcome Text ကို Cyan Blue အရောင်ပြောင်းခြင်း */
@@ -179,8 +194,8 @@
 <div class="container">
     <div class="logo-section">
         <img src="https://img.freepik.com/premium-vector/casino-logo-king-9-vector-illustration_7109-114.jpg" alt="Logo">
-        <h1>KING9 MM</h1>
-        <p class="welcome-text">🥰 ပျော်ရွှင်မှုတွေနေ့တိုင်းရှာ အနိုင်ရဖို့ မှာ ကံထူးပါ 🥰</p>
+        <h1>MM</h1>
+        <p class="welcome-text">ပျော်ရွှင်မှုတွေနေ့တိုင်းရှာ အနိုင်ရဖို့ မှာ ကံထူးပါ</p>
     </div>
 
     <div class="links-container">
