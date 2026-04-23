@@ -19,7 +19,6 @@
         }
 
         body {
-            /* Background ပုံနှင့် အလင်းအမှောင် ညှိထားပါသည် */
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                         url('https://raw.githubusercontent.com/Minghkldy/contact/main/12a347e1265d4747d0c574fb3bddacbb.jpg'); 
             background-size: cover;
@@ -33,13 +32,12 @@
             color: white;
             overflow-x: hidden;
             padding: 15px; 
-            /* 3D Effect အတွက် perspective ထည့်သွင်းရပါမည် */
             perspective: 1000px;
         }
 
         .container {
             width: 100%;
-            max-width: 420px; /* Panel အကွက်အကျယ်ကို ဖုန်းအတွက် ချိန်ညှိသည် */
+            max-width: 420px;
             min-height: auto; 
             padding: 30px 20px;
             text-align: center;
@@ -59,6 +57,13 @@
             margin-bottom: 25px;
         }
 
+        /* Logo Floating Animation - အပေါ်အောက် လှုပ်ရှားမှု */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
         .logo-section img {
             width: 100px;
             height: 100px;
@@ -66,6 +71,8 @@
             border: 4px solid #ffd700;
             box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
             margin-bottom: 18px;
+            /* Animation ထည့်သွင်းခြင်း */
+            animation: float 3s ease-in-out infinite;
         }
 
         h1 {
@@ -94,7 +101,6 @@
             width: 100%;
         }
 
-        /* ၁။ ခလုတ်များ၏ မူလအနေအထား - 3D Effect အတွက် ပြင်ဆင်ခြင်း */
         .link-card {
             display: flex;
             align-items: center;
@@ -104,36 +110,27 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50px;
             padding: 0 25px;
-            min-height: 55px; /* ခလုတ်အမြင့် */
+            min-height: 55px;
             text-decoration: none;
             color: white;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* ပိုမိုညက်ညောသော transition */
+            /* ပိုမိုညက်ညောသော 3D Transition */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             width: 100%;
             -webkit-tap-highlight-color: transparent;
-            /* 3D အကျိုးသက်ရောက်မှုအတွက် element များကို 3D space တွင် ထားရှိရန် */
             transform-style: preserve-3d;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
-        /* ၂။ Mouse ထောက်လိုက်လျှင် (Hover) ဖောင်းကြွလာသော ဒီဇိုင်း */
+        /* Mouse ထောက်လိုက်လျှင် ဖောင်းကြွလာသော အပိုင်း */
         .link-card:hover {
             background: rgba(255, 255, 255, 0.15);
             border-color: #ffd700;
-            /* အပေါ်သို့ ကြွလာပြီး နည်းနည်းစောင်းသွားစေရန် - 3D ဖောင်းကြွ effect */
-            transform: translateZ(50px) translateY(-5px) rotateX(2deg);
-            /* အရိပ်ကို ပိုအားကောင်းစေပြီး ဖောင်းကြွမှုကို ပိုသိသာစေရန် */
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 10px rgba(255, 215, 0, 0.2);
+            /* ရှေ့ကို ကြွတက်လာစေရန် translateZ သုံးထားသည် */
+            transform: translateZ(30px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
         }
 
-        /* နှိပ်လိုက်သည့်အချိန်တွင် နည်းနည်းပြန်ကျသွားစေရန် */
-        .link-card:active {
-            transform: translateZ(10px) translateY(1px) rotateX(1deg);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-            transition: all 0.1s ease;
-        }
-
-        /* ၃။ Hover လုပ်ချိန်တွင် အိုင်ကွန်နှင့် စာသားများပါ 3D နေရာရွေ့သွားစေရန် */
         .link-card i, .link-card span:first-child {
             width: 35px;
             font-size: 22px;
@@ -141,9 +138,8 @@
             justify-content: center;
             align-items: center;
             margin-right: 12px;
-            /* 3D space တွင် ပိုရှေ့ရောက်အောင် ထားသည် */
-            transform: translateZ(30px);
-            transition: transform 0.3s ease;
+            /* Icon ကို ပိုကြွစေရန် */
+            transform: translateZ(20px);
         }
 
         .link-text {
@@ -152,9 +148,8 @@
             font-size: 15px;
             font-weight: bold; 
             margin-right: 35px; 
-            /* 3D space တွင် icon ထက် နည်းနည်းနောက်ကျအောင် ထားသည် */
-            transform: translateZ(20px);
-            transition: transform 0.3s ease;
+            /* စာသားကို ကြွစေရန် */
+            transform: translateZ(10px);
         }
 
         /* Brand Colors */
@@ -164,7 +159,6 @@
         .fa-line { color: #00c300; }
         .fa-bullhorn { color: #ffcc00; }
 
-        /* Tablet နှင့် Desktop အတွက် ကုဒ်များကို မပြင်ဘဲ ထားပါသည် */
         @media (min-width: 768px) {
             .container {
                 max-width: 480px;
@@ -185,7 +179,7 @@
 
 <div class="container">
     <div class="logo-section">
-        <img src="https://via.placeholder.com/150/ffd700/000000?text=LOGO" alt="Logo">
+        <img src="https://img.freepik.com/premium-vector/casino-logo-king-9-vector-illustration_7109-114.jpg" alt="Logo">
         <h1>KING9 MM</h1>
         <p class="welcome-text">🥰 ပျော်ရွှင်မှုတွေနေ့တိုင်းရှာ အနိုင်ရဖို့ မှာ ကံထူးပါ 🥰</p>
     </div>
