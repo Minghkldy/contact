@@ -19,20 +19,25 @@
             user-select: none;
         }
 
+        /* အဖြူကွက်မပေါ်စေရန် html အောက်ခံကို အနက်ရောင်ထားခြင်း */
+        html {
+            background-color: #000;
+        }
+
         body {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                         url('https://raw.githubusercontent.com/Minghkldy/contact/main/12a347e1265d4747d0c574fb3bddacbb.jpg'); 
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
             background-repeat: no-repeat;
+            background-attachment: scroll; /* fixed ကို ဖြုတ်ပြီး scroll သို့ပြောင်းလဲခြင်း */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             color: white;
             overflow-x: hidden;
-            padding: 15px; 
+            padding: 20px 15px; /* ဆွဲတင်လျှင် လွတ်ကင်းစေရန် padding အနည်းငယ်တိုးခြင်း */
             perspective: 1000px;
         }
 
