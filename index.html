@@ -45,7 +45,7 @@
             width: 100%;
             max-width: 420px;
             min-height: auto; 
-            padding: 30px 20px;
+            padding: 30px 0; /* ဘေး Padding ကို ဖြုတ်ပြီး Banner အပြည့်ပေါ်အောင် ချိန်ခြင်း */
             text-align: center;
             position: relative;
             background: rgba(255, 255, 255, 0.05);
@@ -57,10 +57,12 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            overflow: hidden; /* Banner ထောင့်တွေ ကွန်တိန်နာအတွင်း ဝင်နေစေရန် */
         }
 
         .logo-section {
             margin-bottom: 25px;
+            padding: 0 20px; /* Logo နဲ့ စာသားတွေအတွက် ဘေး Padding ပြန်ထည့်ခြင်း */
         }
 
         /* Logo Floating Animation - အပေါ်အောက် လှုပ်ရှားမှု */
@@ -88,7 +90,7 @@
             background: linear-gradient(to bottom, #FFE359 0%, #FFB100 50%, #BD8200 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            margin-bottom: 0px; /* စာသားနဲ့ အကွာအဝေးကို ကျဉ်းလိုက်ခြင်း */
             cursor: pointer;
             transition: all 0.3s ease; 
             -webkit-text-stroke: 0.5px rgba(255, 227, 89, 0.5);
@@ -104,7 +106,8 @@
             color: #FFD700;
             font-size: 14px; 
             font-weight: bold; 
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            margin-top: 0px; /* အပေါ်က H1 နဲ့ ပိုကပ်သွားအောင် ချိန်ခြင်း */
             padding: 0 10px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
             line-height: 1.5;
@@ -115,7 +118,8 @@
             flex-direction: column;
             gap: 15px;
             width: 100%;
-            margin-bottom: 25px; /* Banner နဲ့ အကွာအဝေး */
+            margin-bottom: 25px; 
+            padding: 0 20px; /* ခလုတ်တွေအတွက် ဘေး Padding */
         }
 
         .link-card {
@@ -164,21 +168,20 @@
             transform: translateZ(10px);
         }
 
-        /* Banner Styling */
+        /* Banner Styling - အပြည့်ဖြစ်အောင် ပြင်ထားသည် */
         .footer-banner {
             width: 100%;
             display: flex;
             justify-content: center;
-            padding-top: 5px;
+            margin-top: 5px;
         }
 
         .footer-banner img {
-            width: 100%;
+            width: 100%; /* ကွန်တိန်နာအပြည့် ယူခြင်း */
             height: auto;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-top: 1px solid rgba(255, 215, 0, 0.3); /* အပေါ်ဘက် ဘောင်လိုင်းလေး ထည့်ခြင်း */
             object-fit: cover;
+            display: block;
         }
 
         .fa-facebook-messenger { color: #0084ff; }
@@ -190,7 +193,7 @@
         @media (min-width: 700px) {
             .container {
                 max-width: 480px;
-                padding: 40px;
+                padding: 40px 0 0 0; /* ကွန်ပျူတာမှာလည်း အပေါ်အောက် အချိုးညီအောင် ချိန်ခြင်း */
             }
             .logo-section img {
                 width: 120px;
